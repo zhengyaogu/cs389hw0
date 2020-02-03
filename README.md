@@ -54,6 +54,36 @@ From 2^8(256) to 2^24(16777216) coordinates, here is a table of number iteration
 
 All the updates are conducted in double type.
 
-### Part 2
+### Part 3
 To compare C++'s performance across different data types, we fix the size of coordinates to be 4096, and number of iterations to be 10000. We run the each data type for five trials and take the minimum runtime as its performance score. The following table demonstrates the results.
-|data type | time ()
+|data type | tpc(ns)|
+|double | 90|
+|float | 90|
+|int64_t | 87|
+|int32_t | 87|
+|int16_t | 88|
+|int8_t | 86|
+
+### Part 4
+To estimate how much memory is used running the benchmarks, we used time -f "%M" command which measures the maximum resident set size of the programs. We run five trials for each size of coordinates and record the smallest resident set size. Here are the results corresponding to python and C++. The C++ benchmark uses double type for coordinates to most approximate the precision in python.
+#### C++ Memory Usage
+|size | maximum resident set size (kilobyte)|
+|256 | 3444|
+|512 | 3516|
+|1024| 3564|
+|2048| 3536|
+|4096| 3688|
+|8192| 3888|
+|16384| 3972|
+|32768| 4612|
+|65536| 6080|
+|131072| 8980|
+|262144| 15428|
+|524288| 27412|
+|1048576|52064|
+|2097152|101380|
+|4194304| 199636|
+|8388608| 396268|
+|16777216|789312|
+
+#### Python Memory Usage
