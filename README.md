@@ -36,7 +36,8 @@ See tpcplot.pdf.
 
 ### Part 2
 From 2^8(256) to 2^24(16777216) coordinates, here is a table of number iterations I choose to run the benchmark on in C++; since the program runs much faster in C++, we are able to increase the number of iterations across all sizes of objects by about 10 times:
-|size  |  iters  | 
+|size  |  iters  |
+|------|---------| 
 |256  |   100000 |
 |512  |   100000 |
 |1024  |  50000|
@@ -58,19 +59,21 @@ From 2^8(256) to 2^24(16777216) coordinates, here is a table of number iteration
 All the updates are conducted in double type.
 
 ### Part 3
-To compare C++'s performance across different data types, we fix the size of coordinates to be 4096, and number of iterations to be 10000. We run the each data type for five trials and take the minimum runtime as its performance score. The following table demonstrates the results.
+To compare C++'s performance across different data types, we fix the size of coordinates to be 1048576(2^20), and number of iterations to be 10000. We run the each data type for five trials and take the minimum runtime as its performance score. The following table demonstrates the results.
 |data type | tpc(ns)|
-|double | 90|
-|float | 90|
-|int64_t | 87|
-|int32_t | 87|
-|int16_t | 88|
-|int8_t | 86|
+|----------|--------|
+|double | 6|
+|float | 6|
+|int64_t | 5|
+|int32_t | 5|
+|int16_t | 4|
+|int8_t | 3|
 
 ### Part 4
 To estimate how much memory is used running the benchmarks, we used time -f "%M" command which measures the maximum resident set size of the programs. We run five trials for each size of coordinates and record the smallest resident set size. Here are the results corresponding to python and C++. The C++ benchmark uses double type for coordinates to most approximate the precision in python.
 #### C++ Memory Usage
 |size | maximum resident set size (kilobyte)|
+|-----|-------------------------------------|
 |256 | 3444|
 |512 | 3516|
 |1024| 3564|
@@ -90,6 +93,8 @@ To estimate how much memory is used running the benchmarks, we used time -f "%M"
 |16777216|789312|
 
 #### Python Memory Usage
+|size | maximum resident set size (kilobyte)|
+|-----|-----------|
 |256| 10120|
 |512|10512|
 |1024|10508|
