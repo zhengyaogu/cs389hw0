@@ -3,6 +3,7 @@ a. Explain in your README.md file how many iterations you picked at different si
 
 From 2^8(256) to 2^24(16777216) coordinates, here is a table of number iterations I choose to run the benchmark on in python:
 |size  |  iters  | 
+|------|---------|
 |256  |   10000 |
 |512  |   10000 |
 |1024  |  1000|
