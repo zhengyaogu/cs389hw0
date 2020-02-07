@@ -13,7 +13,7 @@ std::shared_ptr<std::vector<double>> generate_random_list(size_t size, double bo
 	std::shared_ptr<std::vector<double>> floats (new std::vector<double>(size, 0.0));
 	for (int i = 0; i < size; ++i)
 	{
-    	std::mt19937 gen(size);
+    		std::mt19937 gen(size);
 		std::uniform_real_distribution<> dis(-1.0, 1.0);
 		double number = dis(gen);
 		floats->at(i) = (number);
