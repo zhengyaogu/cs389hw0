@@ -21,6 +21,8 @@ From 2^8(256) to 2^24(16777216) coordinates, here is a table of number iteration
 |4194304 |1  |
 |8388608 |1   |
 |16777216 |1  |
+
+
 I choose the largest number of iterations such that the benchmark runs under 62097152 30
 0 seconds to maximize stability of the benchmark, while saving time.
 
